@@ -9,7 +9,7 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_master-12.6
-    image_name: alpha/postgres_master
+    
     
 deploy:
     context: bibin-ecloudcontrol/DEV
@@ -45,10 +45,6 @@ properties:
       vault: PGPASSWORD
     APPUSER_PASSWORD:
       vault: APPUSER_PASSWORD
-    PUSH_BACKUP_WEBDAV: True
-    DAV_FOLDER: DBBACKUP
-    DAV_USER: appz
-    DAV_USERPASSWORD:
-       vault: DAV_USERPASSWORD
-    WEBDAV_BACKUP_URL: http://webdav-2-0
-    revision : 61
+    APPZ_RESTORE_TOKEN: 20200810-1217
+    APPZ_LOAD_TOKEN: 20200810-1217
+    revision : 63
