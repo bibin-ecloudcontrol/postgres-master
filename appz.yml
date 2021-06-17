@@ -26,8 +26,7 @@ volumes:
     mode: ReadWriteOnce
     class: microk8s-hostpath   
     
-monitor:
-    notify: appzops@cloudbourne.co      
+     
     
 properties:
     POSTGRESQL_REPLICATION_MODE: master
@@ -46,6 +45,10 @@ properties:
       vault: PGPASSWORD
     APPUSER_PASSWORD:
       vault: APPUSER_PASSWORD
-    APPZ_RESTORE_TOKEN: 20200810-1217
-    APPZ_LOAD_TOKEN: 20200810-1217
-    revision : 56
+    PUSH_BACKUP_WEBDAV: True
+    DAV_FOLDER: DBBACKUP
+    DAV_USER: appz
+    DAV_USERPASSWORD:
+       vault: DAV_USERPASSWORD
+    WEBDAV_BACKUP_URL: http://webdav-2-0
+    revision : 61
